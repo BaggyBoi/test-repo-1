@@ -1,0 +1,204 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Satoshi", sans-serif;
+}
+
+#header {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    background-color: rgb(14, 14, 14);
+    color: white;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.473);
+    z-index: 9;
+}
+
+#search {
+    width: 800px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    height: 40px;
+    font-size: 30px;
+}
+
+#searchDiv {
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#deliveryRegion {
+    color: rgb(200, 200, 200);
+    font-size: 20px;
+    width: 150px;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    height: 55px;
+}
+
+#deliveryRegion p {
+    color: white;
+}
+
+#search:hover {
+    cursor: not-allowed;
+}
+
+.fa-location-dot {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#sellDiv {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    height: 50px;
+    transition: .5s;
+    margin: auto 0;
+}
+
+#sellDiv:hover {
+    transform: scale(1.2);
+    transition: .5s;
+}
+
+#searchDiv i {
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 200, 71);
+    border-radius: 0 10px 10px 0;
+}
+
+#content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px 50px;
+    overflow: auto;
+}
+
+.item img {
+    margin-right: 50px;
+    height: 300px;
+    width: 300px;
+}
+
+.price {
+    display: flex;
+    color: crimson
+}
+
+.item p {
+    width: 800px;
+}
+
+.item {
+    width: 1200px;
+    margin: 50px 0;
+    padding: 20px;
+    display: flex;
+    height: 300px;
+    font-size: 35px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+#footer {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(14, 14, 14);
+    color: white;
+    font-size: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer a {
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+}
+
+#footer a:hover {
+    color: rgb(200, 200, 200);
+    transform: .2s;
+}
+
+#sellFormDiv {
+    width: 500px;
+    height: 700px;
+    background-color: whitesmoke;
+    z-index: 10;
+    box-shadow: 0 0 15px white;
+    position: absolute;
+    top: 50px;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    left: 65%;
+}
+
+#sellForm {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    font-size: 25px;
+}
+
+#sellForm input {
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+}
+
+#submit {
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+}
