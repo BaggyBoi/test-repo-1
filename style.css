@@ -121,7 +121,7 @@ body {
 
 .price {
     display: flex;
-    color: crimson
+    color: rgb(0, 177, 0)
 }
 
 .item p {
@@ -136,7 +136,7 @@ body {
     height: 300px;
     font-size: 35px;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: column; 
     justify-content: space-between;
     /* border: 1px solid black; */
 }
@@ -201,4 +201,29 @@ body {
     height: 30px;
     font-size: 20px;
     border: none;
+}
+.removeBtn {
+    width: 200px;
+    border: none;
+    background-color: crimson;
+    border: 1px solid crimson;
+    color: white;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 20px;
+    transition: .5s;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.removeBtn:hover{
+    transition: .5s;
+    transform: scale(1.1);
+    background-color: white;
+    color: crimson;
+}
+.pB{
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
 }
