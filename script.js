@@ -110,7 +110,7 @@ function reload() {
     }
 }
 $(".removeBtn").click(function () {
-    let preDelItemId = $(".removeBtn").attr("id")
+    let preDelItemId = $(this).attr("id")
     console.log(preDelItemId)
     itemArray.splice(preDelItemId, 1)
     localStorage.setItem("itemArray", JSON.stringify(itemArray))
