@@ -61,24 +61,37 @@ $("#price").change(function () {
 
 $("#sellForm").submit(function (event) {
     event.preventDefault();
-    let name = $("#name").val()
-    let price = $("#price").val()
-    let imageUrl = $("#image").val()
-    let item = {
-        name: name,
-        price: price,
-        url: imageUrl
+    let imgurl;
+    let inputFileTag = document.getElementById("image")
+    if (inputFileTag.files && inputFileTag.files[0]) {
+        console.log(inputFileTag.files[0]);
+        var reader = new FileReader();
+        reader.onload = imageIsLoaded;
+        reader.readAsDataURL(inputFileTag.files[0]);
     }
-    itemArray.push(item)
-    localStorage.setItem("itemArray", JSON.stringify(itemArray))
-    alert("Item posted!")
-    $("#background").css("display", "none");
-    $("#sellFormDiv").css("display", "none");
-    $("#name").val(null);
-    $("#price").val(null);
-    $("#image").val(null);
-    document.location.reload()
-    reload()
+    function imageIsLoaded(e) {
+        localStorage.setItem("img", e.target.result);
+        imgurl = e.target.result
+
+        let name = $("#name").val()
+        let price = $("#price").val()
+        let imageUrl = imgurl
+        let item = {
+            name: name,
+            price: price,
+            url: imageUrl
+        }
+        itemArray.push(item)
+        localStorage.setItem("itemArray", JSON.stringify(itemArray))
+        alert("Item posted!")
+        $("#background").css("display", "none");
+        $("#sellFormDiv").css("display", "none");
+        $("#name").val(null);
+        $("#price").val(null);
+        $("#image").val(null);
+        document.location.reload()
+        reload()
+    };
 });
 function reload() {
     $("#content").empty();
@@ -96,7 +109,7 @@ function reload() {
         </span>`)
     }
 }
-$(".removeBtn").click(function () { 
+$(".removeBtn").click(function () {
     let preDelItemId = $(".removeBtn").attr("id")
     console.log(preDelItemId)
     itemArray.splice(preDelItemId, 1)
